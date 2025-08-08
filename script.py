@@ -67,7 +67,12 @@ def main():
     analysis_data = pd.read_sql_query(detailed_query, conn)
     conn.close()
     
-    print(f"Dataset summary:")
+    # Save the final cleaned dataset
+    final_dataset = 'final_cleaned_dataset.csv'
+    analysis_data.to_csv(final_dataset, index=False)
+    print(f"Final cleaned dataset saved to: {final_dataset}")
+    
+    print(f"\nDataset summary:")
     print(f"Total records: {len(analysis_data):,}")
     print(f"Date range: {analysis_data['year'].min()}-{analysis_data['year'].max()}")
     print(f"Records with prices: {analysis_data['avg_price'].notna().sum():,}")
