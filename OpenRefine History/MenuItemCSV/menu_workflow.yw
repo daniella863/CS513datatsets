@@ -1,0 +1,32 @@
+#@begin Linear_OR #@desc Linear OpenRefine Workflow
+#@param col-name:high_price
+#@param expression:grel:max(0,_toNumber(value))
+#@param expression:value.toString()
+#@param col-name:price
+#@in table0
+#@out table4
+#@begin core/text-transform0#@desc Text transform on cells in column price using expression grel:max(0, toNumber(value))
+#@param col-name:price
+#@param expression:grel:max(0,_toNumber(value))
+#@in table0
+#@out table1
+#@end core/text-transform0
+#@begin core/text-transform1#@desc Text transform on cells in column price using expression value.toString()
+#@param col-name:price
+#@param expression:value.toString()
+#@in table1
+#@out table2
+#@end core/text-transform1
+#@begin core/text-transform2#@desc Text transform on cells in column high_price using expression grel:max(0, toNumber(value))
+#@param col-name:high_price
+#@param expression:grel:max(0,_toNumber(value))
+#@in table2
+#@out table3
+#@end core/text-transform2
+#@begin core/text-transform3#@desc Text transform on cells in column high_price using expression value.toString()
+#@param col-name:high_price
+#@param expression:value.toString()
+#@in table3
+#@out table4
+#@end core/text-transform3
+#@end Linear_OR
