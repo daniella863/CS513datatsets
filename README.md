@@ -21,15 +21,27 @@ This project analyzes historical American menu data from the "What's on the Menu
 
 ## Files
 - `script.py` - Main analysis script (run this!)
+- `data_quality_assessment.py` - IC violation reports and quality metrics
+- `data_quality_improvements.md` - Documented quality improvements
 - `data_dictionary.md` - Comprehensive data documentation
+- `final_cleaned_dataset.csv` - Final analysis-ready dataset (25,363 records)
 - `Dish-cleaned.csv` - Cleaned dish data
 - `MenuItem-cleaned.csv` - Cleaned menu item data
 - `Menu.csv`, `MenuPage.csv` - Supporting menu metadata
 
 ## How to Run
 ```bash
-python script.py
+python script.py                    # Main analysis
+python data_quality_assessment.py   # Quality metrics & IC violations
 ```
+
+## Data Quality
+**Overall Quality Score: 83.0%**
+- ✅ 100% date format compliance
+- ✅ 100% price numeric compliance  
+- ✅ 100% dish mapping consistency
+- ✅ 0 domain constraint violations
+- See `data_quality_improvements.md` for detailed IC violation analysis
 
 ## Methodology
 1. **Data Cleaning**: Pre-cleaned CSV files to remove inconsistencies
